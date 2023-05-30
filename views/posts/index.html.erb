@@ -1,0 +1,21 @@
+
+<% @post.each do |post| %>
+    <h1><%= post.title %> </h1>
+    <h1><%= post.body %> </h1>
+
+    <h1><%= post.description %> </h1>
+    <%= form_with model: post , url: post_path(post) ,method: 'delete' do |form| %>
+      <%= form.submit 'delete' %>
+    <% end %>
+    
+    <p><%= link_to "edit", edit_post_path(post.id) %></p>
+  <% end %>
+  
+  <p><%= link_to "go for new page", new_post_path %></p>
+  
+
+
+
+
+
+  
